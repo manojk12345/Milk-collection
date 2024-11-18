@@ -2,7 +2,6 @@ import streamlit as st
 from db_function import user, farmer, milk_collection
 import time
 import pandas as pd
-import plotly.express as px
 import sqlite3
 
 
