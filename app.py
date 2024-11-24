@@ -54,7 +54,6 @@ def fetch_monthly_report(year, month, farmer_id):
         FROM MILKCOLLECTION m
         JOIN FARMER f ON m.farmerId = f.farmer_id
         WHERE strftime('%Y', m.date) = ? AND strftime('%m', m.date) = ? AND f.farmer_id = ?
-        GROUP BY f.farmerName
         ORDER BY totalAmount DESC
     '''
     df = pd.read_sql_query(query, conn, params=(year, month, farmer_id))
